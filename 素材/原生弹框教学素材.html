@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+        <title>德云测的Selenium4教程</title>
+    </head>
+    <body>
+		<div align = 'center'>
+			<h2>【德云测】高端软件测试实训</h2>
+			<font size="3" color="blue">上海精创至诚软件技术服务有限公司</font>
+			<br>
+			<br>
+			<br>
+		</div>
+        <div align="center">
+			<input type="button" onclick="showPrompt()" value="我是【提示输入框】类型的弹窗按钮"/>
+			<input type="button" onclick="showAlert()" value="我是【警告提示框】类型的弹窗按钮"/>
+			<input type="button" onclick="showConfirm()" value="我是【确认框】类型的弹窗按钮"/>
+			<br>
+			<br>
+			<br>
+			<span id="textSpan"></span>
+        </div>
+    </body>
+    <script>
+        function showConfirm(){            
+            document.getElementById("textSpan").innerHTML="";
+            if(confirm("德云测的服务好吗？")){
+                document.getElementById("textSpan").innerHTML="<font style='color: red;'>辣还用说？！</font>";
+            }else{
+                document.getElementById("textSpan").innerHTML="<font style='color: red;'>那必须滴！！！</font>";
+            }
+            
+        }
+        function showPrompt(){
+            document.getElementById("textSpan").innerHTML="";
+            content = prompt("输入deyunce显示：德云测，输入jczc显示：精创至诚");
+			var exp_val1 = "deyunce";
+			var exp_val2 = "jczc";
+            if(content == exp_val1){
+                document.getElementById("textSpan").innerHTML="<font style='color: orange;'>德云测</font>";
+            }else if(content == exp_val2){
+                document.getElementById("textSpan").innerHTML="<font style='color: orange;'>精创至诚</font>";
+            }else{
+                document.getElementById("textSpan").innerHTML="<font style='color: red;'>【德云测】将永远做最真、最好、最有趣的软件测试技术服务！</font>";
+            }
+        }
+        function showAlert(){
+            document.getElementById("textSpan").innerHTML="";
+            alert("亲，欢迎加入【德云测】");
+        }
+    </script>
+</html>
